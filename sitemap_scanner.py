@@ -24,9 +24,10 @@ def get_links(url):
                 print "Scanning page: %s" % curr_link
                 scanned_links.append(curr_link)
                 get_links(curr_link)
-        elif not re.search(domain, curr_link) and curr_link not in external_links:
-            print "Found: %s" % curr_link
-            external_links.append(curr_link)
+        elif (not re.search(domain, curr_link) 
+            and curr_link not in external_links):
+                print "Found: %s" % curr_link
+                external_links.append(curr_link)
 
 if __name__ == '__main__':
     if not sys.argv[1]:
