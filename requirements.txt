@@ -1,0 +1,6 @@
+beautifulsoup4==4.3.2
+linkGrabber==0.2.7
+requests==2.3.0
+six==1.7.3
+tld==0.7
+wsgiref==0.1.2
