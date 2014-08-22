@@ -40,8 +40,8 @@ def is_blacklisted(url):
     return False
 
 if __name__ == '__main__':
-    if not sys.argv[1]:
-        raise KeyError("First argument should be URL")
+    if len(sys.argv) < 2:
+        raise KeyError("First argument should be a URL")
 
     scanned_links = [sys.argv[1]]
     external_links = []
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     print "Total pages scanned: %s" % len(scanned_links)
     print "Total external links found: %s" % len(external_links)
 
-    if sys.argv[2]:
+    if len(sys.argv) > 2:
         with open(sys.argv[2], "w") as fp:
             fp.write("Scanned\n--------------------\n")
             for link in scanned_links:
