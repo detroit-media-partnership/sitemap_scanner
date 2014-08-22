@@ -14,6 +14,8 @@ def get_links(url):
             continue
         if curr_link in scanned_links:
             continue
+        if in_external_links(curr_link):
+            continue
         if is_blacklisted(curr_link):
             continue
 
